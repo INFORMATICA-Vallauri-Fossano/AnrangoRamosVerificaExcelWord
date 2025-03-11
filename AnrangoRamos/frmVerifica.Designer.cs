@@ -28,74 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn20File = new System.Windows.Forms.Button();
-            this.btnMediaSommaGrafico = new System.Windows.Forms.Button();
-            this.btnRiepilogo = new System.Windows.Forms.Button();
-            this.btnElimina = new System.Windows.Forms.Button();
+            this.btnEsercizio1 = new System.Windows.Forms.Button();
+            this.btnEsercizio3 = new System.Windows.Forms.Button();
+            this.btnEsercizio2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btn20File
+            // btnEsercizio1
             // 
-            this.btn20File.Location = new System.Drawing.Point(12, 12);
-            this.btn20File.Name = "btn20File";
-            this.btn20File.Size = new System.Drawing.Size(186, 23);
-            this.btn20File.TabIndex = 0;
-            this.btn20File.Text = "20 FILE";
-            this.btn20File.UseVisualStyleBackColor = true;
-            this.btn20File.Click += new System.EventHandler(this.btn20File_Click);
+            this.btnEsercizio1.Location = new System.Drawing.Point(12, 12);
+            this.btnEsercizio1.Name = "btnEsercizio1";
+            this.btnEsercizio1.Size = new System.Drawing.Size(216, 23);
+            this.btnEsercizio1.TabIndex = 0;
+            this.btnEsercizio1.Text = "ESERCIZIO 1";
+            this.btnEsercizio1.UseVisualStyleBackColor = true;
+            this.btnEsercizio1.Click += new System.EventHandler(this.btnEsercizio1_Click);
             // 
-            // btnMediaSommaGrafico
+            // btnEsercizio3
             // 
-            this.btnMediaSommaGrafico.Location = new System.Drawing.Point(12, 41);
-            this.btnMediaSommaGrafico.Name = "btnMediaSommaGrafico";
-            this.btnMediaSommaGrafico.Size = new System.Drawing.Size(186, 23);
-            this.btnMediaSommaGrafico.TabIndex = 1;
-            this.btnMediaSommaGrafico.Text = "MEDIA-SOMMA-GRAFICO";
-            this.btnMediaSommaGrafico.UseVisualStyleBackColor = true;
-            this.btnMediaSommaGrafico.Click += new System.EventHandler(this.btnMediaSommaGrafico_Click);
+            this.btnEsercizio3.Location = new System.Drawing.Point(12, 70);
+            this.btnEsercizio3.Name = "btnEsercizio3";
+            this.btnEsercizio3.Size = new System.Drawing.Size(216, 23);
+            this.btnEsercizio3.TabIndex = 1;
+            this.btnEsercizio3.Text = "ESERCIZIO 3";
+            this.btnEsercizio3.UseVisualStyleBackColor = true;
+            this.btnEsercizio3.Click += new System.EventHandler(this.btnEsercizio3_Click);
             // 
-            // btnRiepilogo
+            // btnEsercizio2
             // 
-            this.btnRiepilogo.Location = new System.Drawing.Point(12, 70);
-            this.btnRiepilogo.Name = "btnRiepilogo";
-            this.btnRiepilogo.Size = new System.Drawing.Size(186, 23);
-            this.btnRiepilogo.TabIndex = 2;
-            this.btnRiepilogo.Text = "RIEPILOGO";
-            this.btnRiepilogo.UseVisualStyleBackColor = true;
-            this.btnRiepilogo.Click += new System.EventHandler(this.btnRiepilogo_Click);
-            // 
-            // btnElimina
-            // 
-            this.btnElimina.Location = new System.Drawing.Point(12, 99);
-            this.btnElimina.Name = "btnElimina";
-            this.btnElimina.Size = new System.Drawing.Size(186, 23);
-            this.btnElimina.TabIndex = 3;
-            this.btnElimina.Text = "ELIMINA TUTTO";
-            this.btnElimina.UseVisualStyleBackColor = true;
-            this.btnElimina.Click += new System.EventHandler(this.btnElimina_Click);
+            this.btnEsercizio2.Location = new System.Drawing.Point(12, 41);
+            this.btnEsercizio2.Name = "btnEsercizio2";
+            this.btnEsercizio2.Size = new System.Drawing.Size(216, 23);
+            this.btnEsercizio2.TabIndex = 2;
+            this.btnEsercizio2.Text = "ESERCIZIO 2";
+            this.btnEsercizio2.UseVisualStyleBackColor = true;
+            this.btnEsercizio2.Click += new System.EventHandler(this.btnEsercizio2_Click);
             // 
             // frmVerifica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnElimina);
-            this.Controls.Add(this.btnRiepilogo);
-            this.Controls.Add(this.btnMediaSommaGrafico);
-            this.Controls.Add(this.btn20File);
+            this.Controls.Add(this.btnEsercizio2);
+            this.Controls.Add(this.btnEsercizio3);
+            this.Controls.Add(this.btnEsercizio1);
             this.Name = "frmVerifica";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVerifica_FormClosing);
+            this.Load += new System.EventHandler(this.frmVerifica_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn20File;
-        private System.Windows.Forms.Button btnMediaSommaGrafico;
-        private System.Windows.Forms.Button btnRiepilogo;
-        private System.Windows.Forms.Button btnElimina;
+        private System.Windows.Forms.Button btnEsercizio1;
+        private System.Windows.Forms.Button btnEsercizio3;
+        private System.Windows.Forms.Button btnEsercizio2;
     }
 }
 

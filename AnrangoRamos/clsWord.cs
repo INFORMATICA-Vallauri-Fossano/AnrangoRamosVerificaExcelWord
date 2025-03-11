@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,7 @@ namespace wordCSharp_ns
             if (nomeFile == "")
                 myDoc.Save();//apre finestra dialogo e chiede
             else
-                myDoc.SaveAs(nomeFile); //salva con path e nome
+                myDoc.SaveAs(nomeFile, WdSaveFormat.wdFormatDocumentDefault); //salva con path e nome
             //
             myDoc.Close();//chiude il documento
             myWord.Quit();//chiude l'applizazione
