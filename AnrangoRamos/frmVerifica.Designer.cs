@@ -48,7 +48,7 @@
             this.btnEsercizio3.Location = new System.Drawing.Point(12, 70);
             this.btnEsercizio3.Name = "btnEsercizio3";
             this.btnEsercizio3.Size = new System.Drawing.Size(216, 23);
-            this.btnEsercizio3.TabIndex = 1;
+            this.btnEsercizio3.TabIndex = 2;
             this.btnEsercizio3.Text = "ESERCIZIO 3";
             this.btnEsercizio3.UseVisualStyleBackColor = true;
             this.btnEsercizio3.Click += new System.EventHandler(this.btnEsercizio3_Click);
@@ -58,7 +58,7 @@
             this.btnEsercizio2.Location = new System.Drawing.Point(12, 41);
             this.btnEsercizio2.Name = "btnEsercizio2";
             this.btnEsercizio2.Size = new System.Drawing.Size(216, 23);
-            this.btnEsercizio2.TabIndex = 2;
+            this.btnEsercizio2.TabIndex = 1;
             this.btnEsercizio2.Text = "ESERCIZIO 2";
             this.btnEsercizio2.UseVisualStyleBackColor = true;
             this.btnEsercizio2.Click += new System.EventHandler(this.btnEsercizio2_Click);
@@ -67,12 +67,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(371, 109);
             this.Controls.Add(this.btnEsercizio2);
             this.Controls.Add(this.btnEsercizio3);
             this.Controls.Add(this.btnEsercizio1);
             this.Name = "frmVerifica";
-            this.Text = "Form1";
+            this.Text = "CONTEGGIO PER SETTIMANE";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVerifica_FormClosing);
             this.Load += new System.EventHandler(this.frmVerifica_Load);
             this.ResumeLayout(false);

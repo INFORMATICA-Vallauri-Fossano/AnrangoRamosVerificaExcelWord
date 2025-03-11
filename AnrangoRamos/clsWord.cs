@@ -59,12 +59,12 @@ namespace wordCSharp_ns
             Range myRange = myDoc.Range(ref start, ref end);
             myRange.Text = testo + "\n";
             myRange.Font.Name = font;
-            myRange.Font.Size=Convert.ToInt32(size);
-            myRange.Bold=Convert.ToInt32(bold);
+            myRange.Font.Size = Convert.ToInt32(size);
+            myRange.Bold = Convert.ToInt32(bold);
             myRange.Italic = Convert.ToInt32(italic);
-            WdUnderline u =(WdUnderline)Enum.Parse(typeof(WdUnderline),
+            WdUnderline u = (WdUnderline)Enum.Parse(typeof(WdUnderline),
                 "wdUnderline" + sottolineato);
-            myRange.Underline=u;
+            myRange.Underline = u;
             WdParagraphAlignment a = (WdParagraphAlignment)Enum.Parse(typeof(WdParagraphAlignment),
                 "wdAlignParagraph" + allineamento);
             myRange.ParagraphFormat.Alignment = a;
@@ -75,7 +75,7 @@ namespace wordCSharp_ns
 
         public void impostaFont(ComboBox cmbFont)
         {
-            foreach(FontFamily family in FontFamily.Families)
+            foreach (FontFamily family in FontFamily.Families)
                 cmbFont.Items.Add(family.Name);
             cmbFont.SelectedIndex = 11;
         }
@@ -92,7 +92,7 @@ namespace wordCSharp_ns
         public void impostaSottolineato(ComboBox cmbSottolineato)
         {
             string[] wdU = (string[])Enum.GetNames(typeof(WdUnderline));
-            foreach(string sottolineato in wdU)
+            foreach (string sottolineato in wdU)
                 cmbSottolineato.Items.Add(sottolineato.Substring(11));
             cmbSottolineato.SelectedIndex = 0;
         }
@@ -115,7 +115,7 @@ namespace wordCSharp_ns
 
         public void impostaTabella(ComboBox cmbRighe, ComboBox cmbColonne)
         {
-            for (int i = 1 ; i<6 ; i++)
+            for (int i = 1; i < 6; i++)
             {
                 cmbRighe.Items.Add(i.ToString());
                 cmbColonne.Items.Add(i.ToString());
@@ -127,8 +127,8 @@ namespace wordCSharp_ns
         public Table creaTabella(object start, object end, int r, int c)
         {
             Table myTable;
-            Range myRange = myDoc.Range(ref start,ref end);
-            myTable = myDoc.Tables.Add(myRange,r,c);
+            Range myRange = myDoc.Range(ref start, ref end);
+            myTable = myDoc.Tables.Add(myRange, r, c);
             myTable.Borders.Enable = 1;
             return myTable;
         }
@@ -137,7 +137,7 @@ namespace wordCSharp_ns
             WdCellVerticalAlignment vAlign, WdParagraphAlignment oAlign,
             bool bold, int size, string font, WdColor colore)
         {
-            tabella.Cell(r,c).Range.Text = testo;
+            tabella.Cell(r, c).Range.Text = testo;
             tabella.Cell(r, c).Range.Cells.VerticalAlignment = vAlign;
             tabella.Cell(r, c).Range.Paragraphs.Alignment = oAlign;
             tabella.Cell(r, c).Range.Bold = Convert.ToInt32(bold);
@@ -155,7 +155,7 @@ namespace wordCSharp_ns
             return testo;
         }
 
-        public bool ricercaTesto(string testoRicercare, ref object start, 
+        public bool ricercaTesto(string testoRicercare, ref object start,
             ref object end, bool sostituisci, string testoSostituire)
         {
             bool trovato = false;
@@ -169,9 +169,9 @@ namespace wordCSharp_ns
             myWord.Selection.Start = myDoc.Content.Start; //inizio del documento
             myWord.Selection.End = myDoc.Content.End; //fine
             //
-            if(sostituisci)
+            if (sostituisci)
             {
-                if(myWord.Selection.Find.Execute(ref findText,ref ms,
+                if (myWord.Selection.Find.Execute(ref findText, ref ms,
                     ref ms, ref ms, ref ms, ref ms, ref ms, ref ms, ref ms,
                     ref replaceText, WdReplace.wdReplaceAll))
                     trovato = true;
@@ -183,9 +183,9 @@ namespace wordCSharp_ns
                     trovato = true;
             }
             //
-            if(trovato)
+            if (trovato)
             {
-                start = myWord.Selection.Start; 
+                start = myWord.Selection.Start;
                 end = myWord.Selection.End;
             }
             return trovato;
@@ -207,5 +207,30 @@ namespace wordCSharp_ns
             myWord.Visible = false;
             myDoc = myWord.Documents.Open(myFile);
         }
+
+
+        public void CreateWordDocument(string filePath)
+        {
+            myWord = new Application();
+            myDoc = myWord.Documents.Add();
+
+            // Save and close
+            myDoc.SaveAs2(filePath, WdSaveFormat.wdFormatDocumentDefault);
+            myDoc.Close();
+            myWord.Quit();
+        }
+
+
+        public void OpenWordDocument(string filePath)
+        {
+            myWord = new Application();
+            myWord.Visible = true; // Show Word window
+
+            object missing = Type.Missing;
+            object file = filePath;
+
+            myDoc = myWord.Documents.Open(ref file, ref missing, ref missing, ref missing);
+        }
+
     }
 }

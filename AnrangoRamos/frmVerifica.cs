@@ -107,9 +107,16 @@ namespace AnrangoRamos
         clsWord word = new clsWord();
         private Table table;
 
+            string filePath = System.Windows.Forms.Application.StartupPath+@"riepilogo.docx";
         private void riepilogo()
         {
-            word.creaDocumento(true);
+
+            // Create and save a new Word file
+            word.CreateWordDocument(filePath);
+
+            // Open the saved file
+
+            word.apriDocumento(filePath);
             object start = 0, end = 0;
             word.impostaRange(ref start, ref end);
             table = word.creaTabella(start, end, 8, 3);
@@ -123,7 +130,8 @@ namespace AnrangoRamos
                 word.scriviCella(table, i + 2, 2, somma[i].ToString(), WdCellVerticalAlignment.wdCellAlignVerticalCenter, WdParagraphAlignment.wdAlignParagraphRight, false, 10, "verdana", WdColor.wdColorBlack);
                 word.scriviCella(table, i + 2, 3, media[i].ToString("N2"), WdCellVerticalAlignment.wdCellAlignVerticalCenter, WdParagraphAlignment.wdAlignParagraphRight, false, 10, "verdana", WdColor.wdColorBlack);
             }
-            word.salvaChiudi(System.Windows.Forms.Application.StartupPath + "riepilogo");
+            word.salvaChiudi();
+
         }
 
         private void eliminaFile()
@@ -169,7 +177,7 @@ namespace AnrangoRamos
 
         private void btnEsercizio3_Click(object sender, EventArgs e)
         {
-            word.apriDocumento(System.Windows.Forms.Application.StartupPath + "riepilogo.docx");
+            word.OpenWordDocument(filePath);
         }
     }
 }
